@@ -69,4 +69,4 @@ Nel menu interattivo è possibile selezionare una delle seguenti opzioni:
 
 ## 📌 Autore
 
-Sviluppato da Giovanni per l'analisi interattiva di dati di vendita di videogiochi.
+Sviluppato da Giovanni Pisaniello e Giacomo Visciotti per l'analisi interattiva di dati di vendita di videogiochi.
