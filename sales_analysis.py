@@ -72,6 +72,9 @@ def top_platform_by_sales(data):
     totals = {}
     for plat in platforms:
         totals[plat] = np.sum(data['Global_Sales'][data['Platform'] == plat])
+        # Ordina le piattaforme in base alle vendite globali
+    # best = max(totals, key=totals.get)
+    # return best, totals[best]  # Restituisce la piattaforma con le vendite globali più alte e il totale delle vendite
     return max(totals, key=totals.get), totals[max(totals, key=totals.get)]
 
 def top_publisher_by_sales(data):
