@@ -50,7 +50,7 @@ def total_sales_region(data, region):
     """
     Calcola le vendite totali per una regione specifica.
     """
-    if region not in data.dtype.names:
+    if region not in data.dtype.names: # Controlla se la regione è valida
         raise ValueError(f"Regione sconosciuta: {region}")
     return np.sum(data[region])
 
@@ -58,7 +58,8 @@ def total_sales_for_game_year(data, game_name, year):
     """
     Calcola le vendite globali di un gioco specifico in un anno specifico.
     """
-    mask = (data['Name'] == game_name) & (data['Year'] == year)
+    mask = (data['Name'] == game_name) & (data['Year'] == year) # Crea una maschera booleana per filtrare i dati
+    # Filtra i dati in base alla maschera e calcola le vendite globali
     if np.any(mask):
         return np.sum(data['Global_Sales'][mask])
     else:
@@ -71,7 +72,7 @@ def top_platform_by_sales(data):
     platforms = np.unique(data['Platform'])
     totals = {}
     for plat in platforms:
-        totals[plat] = np.sum(data['Global_Sales'][data['Platform'] == plat])
+        totals[plat] = np.sum(data['Global_Sales'][data['Platform'] == plat])# Ordina le piattaforme in base alle vendite globali
         # Ordina le piattaforme in base alle vendite globali
     # best = max(totals, key=totals.get)
     # return best, totals[best]  # Restituisce la piattaforma con le vendite globali più alte e il totale delle vendite
@@ -84,8 +85,8 @@ def top_publisher_by_sales(data):
     pubs = np.unique(data['Publisher'])
     totals = {}
     for pub in pubs:
-        totals[pub] = np.sum(data['Global_Sales'][data['Publisher'] == pub])
-    return max(totals, key=totals.get), totals[max(totals, key=totals.get)]
+        totals[pub] = np.sum(data['Global_Sales'][data['Publisher'] == pub]) # Ordina i publisher in base alle vendite globali
+    return max(totals, key=totals.get), totals[max(totals, key=totals.get)]# Restituisce il publisher con le vendite globali più alte e il totale delle vendite
 
 def top_genre_by_sales(data):
     """
@@ -94,7 +95,7 @@ def top_genre_by_sales(data):
     genres = np.unique(data['Genre'])
     totals = {}
     for g in genres:
-        totals[g] = np.sum(data['Global_Sales'][data['Genre'] == g])
+        totals[g] = np.sum(data['Global_Sales'][data['Genre'] == g])# Ordina i generi in base alle vendite globali
     return max(totals, key=totals.get), totals[max(totals, key=totals.get)]
 
 def avarage_sales_by_genre(data):
@@ -104,7 +105,7 @@ def avarage_sales_by_genre(data):
     genres = np.unique(data['Genre'])
     averages = {}
     for g in genres:
-        averages[g] = np.mean(data['Global_Sales'][data['Genre'] == g])
+        averages[g] = np.mean(data['Global_Sales'][data['Genre'] == g])# Calcola la media delle vendite globali per ogni genere
     return averages
 
 def yearly_sales_by_platform(data, platform):
@@ -114,7 +115,7 @@ def yearly_sales_by_platform(data, platform):
     years = np.unique(data['Year'])
     trend = {}
     for y in years:
-        mask = (data['Year'] == y) & (data['Platform'] == platform)
+        mask = (data['Year'] == y) & (data['Platform'] == platform)# Crea una maschera booleana per filtrare i dati
         if np.any(mask):
             trend[y] = np.sum(data['Global_Sales'][mask])
     return trend
@@ -125,17 +126,18 @@ def yearly_min_sales_by_publisher(data, publisher):
     """
     years = np.unique(data['Year'])
     mins = {}
-    for y in years:
+    for y in years:# Crea una maschera booleana per filtrare i dati
         mask = (data['Year'] == y) & (data['Publisher'] == publisher)
         if np.any(mask):
-            mins[y] = np.min(data['Global_Sales'][mask])
+            mins[y] = np.min(data['Global_Sales'][mask])# Calcola la vendita minima annuale per il publisher
     return mins
 
 def top_10_games(data):
     """
     Restituisce i 10 giochi con le vendite globali più alte.
     """
-    sorted_data = np.sort(data, order='Global_Sales')[::-1]
+    sorted_data = np.sort(data, order='Global_Sales')[::-1]# Ordina i giochi in base alle vendite globali
+    # Restituisce i primi 10 giochi con le vendite globali più alte
     return sorted_data[:10]
 
 # Menu interattivo con match-case
