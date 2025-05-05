@@ -1,16 +1,16 @@
 
-# 📊 Analisi Dati Videogiochi
+# VideoGame's Analysis
 
 Questo progetto in Python consente di analizzare un dataset di videogiochi (in formato CSV) attraverso un'interfaccia a menu interattivo da terminale. Le analisi comprendono vendite per regione, anno, piattaforma, genere, publisher e altro.
 
-## 🗂 Requisiti
+## Requisiti
 
 - Python 3.7 o superiore
 - Moduli Python:
   - `csv`
   - `numpy`
 
-## 📁 Dataset
+## Dataset
 
 Il programma richiede un file chiamato `videogame.csv` nella stessa directory dello script. Il file deve contenere le seguenti colonne:
 
@@ -25,7 +25,7 @@ Il programma richiede un file chiamato `videogame.csv` nella stessa directory de
 - `Other_Sales`
 - `Global_Sales`
 
-## ▶️ Esecuzione
+## Esecuzione
 
 Per avviare il programma, esegui:
 
@@ -33,7 +33,7 @@ Per avviare il programma, esegui:
 python nome_file.py
 ```
 
-## 📋 Funzionalità
+## Funzionalità
 
 Nel menu interattivo è possibile selezionare una delle seguenti opzioni:
 
@@ -62,11 +62,9 @@ Nel menu interattivo è possibile selezionare una delle seguenti opzioni:
 
 0. **Esci dal programma**
 
-## ⚠️ Note
+## Note
 
 - Le righe del CSV con dati mancanti o errati verranno ignorate automaticamente.
 - Il programma è compatibile con Python 3.10+ per l'uso del costrutto `match-case`.
 
-## 📌 Autore
-
-Sviluppato da Giovanni Pisaniello e Giacomo Visciotti per l'analisi interattiva di dati di vendita di videogiochi.
+*Autore: Giacomo Visciotti-Giovanni Pisaniello*
