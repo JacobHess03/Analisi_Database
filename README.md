@@ -1,70 +1,67 @@
+Video Game Sales Analysis
 
-# VideoGame's Analysis
+This Python project allows you to analyze a video game dataset (in CSV format) through an interactive terminal menu. The analyses include sales by region, year, platform, genre, publisher, and more.
+Requirements
 
-Questo progetto in Python consente di analizzare un dataset di videogiochi (in formato CSV) attraverso un'interfaccia a menu interattivo da terminale. Le analisi comprendono vendite per regione, anno, piattaforma, genere, publisher e altro.
+    Python 3.7 or higher
+    Python modules:
+        csv
+        numpy
 
-## Requisiti
+Dataset
 
-- Python 3.7 o superiore
-- Moduli Python:
-  - `csv`
-  - `numpy`
+The program requires a file named videogame.csv in the same directory as the script. The file must contain the following columns:
 
-## Dataset
+    Name
+    Platform
+    Year
+    Genre
+    Publisher
+    NA_Sales
+    EU_Sales
+    JP_Sales
+    Other_Sales
+    Global_Sales
 
-Il programma richiede un file chiamato `videogame.csv` nella stessa directory dello script. Il file deve contenere le seguenti colonne:
+Execution
 
-- `Name`
-- `Platform`
-- `Year`
-- `Genre`
-- `Publisher`
-- `NA_Sales`
-- `EU_Sales`
-- `JP_Sales`
-- `Other_Sales`
-- `Global_Sales`
+To start the program, run:
+Bash
 
-## Esecuzione
+    python nome_file.py
 
-Per avviare il programma, esegui:
+Features
 
-```bash
-python nome_file.py
-```
+From the interactive menu, you can select one of the following options:
 
-## Funzionalità
+    Total Sales by Region
+    Calculates total sales for a specified region: NA_Sales, EU_Sales, JP_Sales, Other_Sales, Global_Sales.
 
-Nel menu interattivo è possibile selezionare una delle seguenti opzioni:
+    Game Sales by Year
+    By entering the game name and year, it shows global sales for that year.
 
-1. **Vendite totali per regione**  
-   Calcola il totale delle vendite in una delle regioni: `NA_Sales`, `EU_Sales`, `JP_Sales`, `Other_Sales`, `Global_Sales`.
+    Platform with Most Global Sales
+    Determines the platform with the highest total sales.
 
-2. **Vendite di un gioco per anno**  
-   Inserendo il nome del gioco e l'anno, mostra le vendite globali in quell'anno.
+    Publisher with Most Global Sales
 
-3. **Piattaforma con più vendite globali**  
-   Determina la piattaforma con il maggiore numero di vendite.
+    Best-Selling Genre Globally
 
-4. **Publisher con più vendite globali**
+    Average Sales by Genre
 
-5. **Genere più venduto globalmente**
+    Annual Sales Trend by Platform
+    Displays the sum of sales per year for a selected platform.
 
-6. **Vendite medie per genere**
+    Minimum Annual Sales by Publisher
+    Shows the lowest recorded sales each year for a specific publisher.
 
-7. **Tendenza vendite annuali per piattaforma**  
-   Visualizza la somma delle vendite per anno per una piattaforma selezionata.
+    Top 10 Games by Global Sales
 
-8. **Vendita minima annuale per publisher**  
-   Mostra la vendita più bassa registrata ogni anno da un publisher.
+    Exit Program
 
-9. **Top 10 giochi per vendite globali**
+Notes
 
-0. **Esci dal programma**
+    CSV rows with missing or erroneous data will be automatically ignored.
+    The program is compatible with Python 3.10+ for the use of the match-case construct.
 
-## Note
-
-- Le righe del CSV con dati mancanti o errati verranno ignorate automaticamente.
-- Il programma è compatibile con Python 3.10+ per l'uso del costrutto `match-case`.
-
-*Autore: Giacomo Visciotti-Giovanni Pisaniello*
+Authors: Giacomo Visciotti, Giovanni Pisaniello
